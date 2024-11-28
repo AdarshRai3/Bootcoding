@@ -6,16 +6,74 @@ import java.util.ArrayList;
 public class ArrayListMethods {
   public static void main(String[] args) {
     
-    ArrayList<Integer> list = Arrays.asList(1,2,3);
+    // Time complexity of list
+    // O(1) for add and remove
+    // O(n) for get
+    // O(n) for set
+    // O(n) for contains
 
+
+    // List<Integer> list = new ArrayList<>();
+    // list.add(3);
+    // list.add(4);
+    // list.add(1);
+    // list.add(2);
+    // list.add(5);
+
+    // //Sort the list 
+    //  System.out.println(list);
+    //  //This will sort list in ascending order
+    //  Collections.sort(list);
+    //  System.out.println(list);
+    //  //This will sort the list in descending order;
+    //  Collections.sort(list,Collections.reverseOrder());
+    //  System.out.println(list);
+     
+
+    // //this will return the list as an array
+    // list.toArray(new Integer[0]);
+    // System.out.println(list);
+
+
+    // //this will return whether the list contains the value or not
+    // list.contains(1);
+    // System.out.println(list.contains(1));
     
-
-    System.out.println(list);
-
-
+    //list.size() returns the size of the list
+    //list.set(index,value) sets the value at the index
+    // list.set(list.size()-1,5);
+    // System.out.println(list);
+     
+    // list.remove(1);
+    // //this will remove the element present at index 1
+    // System.out.println(list);
+    // //Using wapper class we can remove element by value
+    // list.remove(Integer.valueOf(1));
+    // System.out.println(list);
     
+    // List<Integer> list1 = new ArrayList<>();
+    // list1.add(5);
+    // list1.add(6);
+    // list1.add(7);
+    // list1.addAll(list);
+    // System.out.println(list1);
 
+    //  List<String> list = List.of("R","A","M");
+    //  System.out.println(list);
+    //  //this method will create an immuatable list.
 
+    //  //to make change in this list you have to just create a new list
+
+    //  List<String> list1 = new ArrayList<>(list);
+    //  list1.add("Ji");
+    //  System.out.println(list1);
+    
+    
+    
+    //To change in always of list which is Arrays.asList we have to use getter and setter functions.
+    // List<Integer> list = Arrays.asList(1,2,3,4,5);
+    // list.set(2,5);
+    // System.out.println(list);
     // List<Integer>list1= new ArrayList<>();
     // // this is  all a valid method to declare arraylist since List is a parent interface to ArrayList 
     // List list2 = new ArrayList<>();
