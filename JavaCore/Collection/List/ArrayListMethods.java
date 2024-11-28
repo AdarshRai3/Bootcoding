@@ -11,7 +11,25 @@ public class ArrayListMethods {
     // O(n) for get
     // O(n) for set
     // O(n) for contains
+     
+    // //there are 3 major ways of iterating the list 
+    //   List <String> list = new ArrayList<>();
 
+    // //Using simple for loop  
+    // for(int i=0;i<list.size();i++){
+    //     System.out.println(list.get(i));
+    // }  
+     
+    // //Using for each loop
+    // for(String s : list){
+    //     System.out.println(s);
+    // }
+    
+    // //Using Iterator
+    // Iterator<String> itr = list.iterator();
+    // while(itr.hasNext()){
+    //     System.out.println(itr.next());
+    // }
 
     // List<Integer> list = new ArrayList<>();
     // list.add(3);
