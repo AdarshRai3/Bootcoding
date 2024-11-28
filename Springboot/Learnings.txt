@@ -1,0 +1,151 @@
+I want to check if the process is running of my port 8080 for that
+if we on windows then we simply use this command to check process:
+tasklist /FI "PID eq <PID> ", for linux you can use command ps aux <PID> | grep 8080.
+------------------------------------------------------------------
+Maven
+1>Manages Dependencies.
+-For this we go to maven reposiory and search for the dependencies and post it in the pom.xml file.
+2>Build Automation tool
+-Build life cycle is divided in phases: Validate,compile,test,package,verify, install and deploy.
+-first we have to validate mvn using commands.
+-if mvn is in our system we use command "mvn validate" if note we can use the current working directory mvn wapper to validate "./mvnw validate"
+-then we can use "mvn compile" to compile the file 
+-after that we use "mvn test" to run the test
+-then we use "mvn package" this will make a jar of our project in our target folder of ou project from there we can run the project using "java -jar <project name>"
+-then use "mvn verify" to use in security testing and interegation testing.
+-after that we can use "mvn install" to install the jar file in .m2 repository of our file.
+-we can use just "mvn package" command to validate, compile,test and package
+-------------------------------------------------------------------
+File structure of Maven Project.
+.idea : This folder is related to intellj ide.
+.mvn : This folder is for maven wrapper.
+.gitignore : This file contains all the information about the folders and files that we don't want to upload on the version control.
+Help.md: This file has the documentation of our project.
+src: This is the folder in which we write our project in main folder and write test for it using test folder.
+In main folder we have java folder in which write our code and then we have resource folder to put our resource inside java
+This file contain all the information related to our project like:
+-Information about our project
+-Dependencies that we have used in our project
+-Plugins will help us to convert out project in jar or war
+-Parents have required dependencies and required plugins.
+-Properties we use to tell maven compiler plugin to tell we are using which java version to built this project.
+*jar that we build in jar have compile code with all the dependencies to run it independently on any system
+*jar.original has contain all the code of the project
+------------------------------------------------------------------
+Spring boot main concepts :
+IOC(Inversion of control): It is the design principal in Spring boot by which have externalise the create of object instead of creating object by ourselves.
+IOC container: It is container which contain all the class which are annotated by @Component and it provide us with object of that class when we need it in our program.
+Beans:Ioc container maintain the life cycle of the object that object is called beans, means any object created in IOC container is called beans.
+Application Context: It is the central interface which controls the creation of object/beans,resolving dependencies and injection of object if and when required in our program.
+Dependencies Injection: It is a design pattern that allow the class to recieve objects/beans from IOC container rather than recieving it IOC container rather than creating by user. Hence, this lead to losse coupling. 
+Annotation(@): It is feature of Spring boot by which we can provide information about any class, intereface, method and field in Spring boot.
+@Autowired: It is annotation used to mark a field, setter method and constructor where we need to inject the beans/objects.
+Now we go through some of the important annotation in java.
+@SpringBootApplication : It is the annotation we only use once in our program with the main method which the entry point of our program.
+@SpringBootApplication annotation does three work for us, first is 
+@Configuration, @EnableAutoConfiguration , @ComponentScan 
+@ComponentScan will take our main package as base package then scan all the component in that package and make a bean of them to put Inversion of Control container.If we write some class that is outside the package then it will not be able to scan them.
+@Autowired : It is important annotation to perform dependency injection, whenever we need use one class in another class we use it.Here we are using this annotation over the field to get the object of one class in another class this annotation will ask IOC container create a object of one class in another class, where are using notation on the field so this is called field injection.
+@EnableAutoConfiguration:This is used to auto configure and connect to database, what we do is we just provide DB dependencies in pom.xml file and use @EnableAutoConfiguration in properies with server name and password it will connect to it automatically we don't need to form connection manually.
+@Configuration: If we write it above the class that means that class will provide us with configuration, generally we use it with another annotation called as @Bean, it annotation also create a bean in Inversion of Control container but instead of class it is used to make bean of methods.
+--------------------------------------------------------------------
+@RestController: This is an annotation is used for making RESTful web services. The REST API means Representational State Transfer API.REST API = HTTP VERB + URL. HTTP VERB are GET,PUT,POST,DELETE.
+This is class level annotation.
+@RequestMapping "/journal": THis is also a class level annotation,used to map RestAPI request Get/Post/Put/Delete.
+@GetMapping :This is function level annotation to get data from database
+@PostMapping:This is function level annotation to post from database.
+@DeleteMapping:This is function level annotation to delete from database.In this we need a ID.
+@PutMapping : THis is function level annotation to update from database.In this we need a ID.
+@PathVariable:This is a path variable :id that we use with url.
+@RequestBody: THis is a body of params that we are passing in the database
+-------------------------------------------------------------------
+ORM (Object Relational Mapping): It is technique to map Java objects with to database tables.
+It allow user to work on relational Databases using object oriented programming concept.
+JPA(Java Persistance API): It is the way to achieve ORM, it includes annotations and intefaces in our Java class, require persistance provider (ORM Tool) for implementation.
+To use JPA you need a persistance provider, in our case we are using Hibernate , it will provide use with the JPA interface with some underlying functionalities.
+Spring-data-JPI:It is built on the top of JPA but it is not an implementation of JPA instead it provide us with higher level abstraction and utilities.
+JPA is primarily built for relational database.
+There are two methods of working with JPA using NOSQL database Context API and Query method DSL 
+--------------------------------------------------------------------
+to make connection between our spring boot application and spring boot database these are the steps we have to do:
+>add dependencies in pom.xml
+>now run the following command so spring will download our dependencies:
+-mvn clean install
+-mvn dependency:resolve
+-mvn clean update
+after that we have to go in main/resources/application.Properties
+than add information about database to connect to it 
+spring.data.mongodb.host=hostname
+spring.data.mongodb.port=port
+spring.data.mongodb.database=database_name
+spring.data.mongodb.username=username
+spring.data.mongodb.password=yourpassword
+--------------------------------------------------------------------
+Now after this we using best practices in Java Spring boot which say us to only put endpoint in controller and write business logic in services and that services takes data from repository 
+controller--->services--->repository.
+--------------------------------------------------------------------
+In this controller--->service---->repository
+Now we have 
+controller which have endpoints of our function 
+services we write business logic of our project
+repository we have repository class which extends to the monogoRepository class which has all the methods like save,findByID,findAll and Delete. 
+We have to create bean of JournalEntryRepository  in our JournalEntryServices and write the business logic in it and then we create bean of JournalEntryServices and use it in JournalEntryController to achive CURD Functionality.
+--------------------------------------------------------------------
+Http Status code: A 3 digit HTTP code is return by a web server as a part of the response to an HTTP request made b client
+1XX : Informational(Request is recieved and Understood)
+2XX : Success(Request is recieved and processed successfully)
+200 : Ok (Request has been processed succesfully)
+201 : Created(Request has been processed and enitity has been created in the database)
+204: No Content(Request has been processed  with no response body , it generally used in the case of  successful Delete HTTP verb , operation that doesnot return a data)
+3XX: Redirection:Further actions are need to complete the request.
+301:Request reposnse has moved to different url
+302:Found , Request response has moved to different url temperory.
+304:Server ask client to use the catched response.
+4XX:Client Server
+400: Bad Request : Syntax error in our request
+401: Unauthorized : The client required authorization credentials 
+403:Forbidden: The Client doesn't has the permissions
+404: Not Found:The Client send the request of the data that is not present in the database.
+5XX: Server side Error
+500:Internal Server :  This is generic response if anything is wrong from the server side.
+501:The server acting as a gateway or proxy recieved an invalid response 
+503:Service is not available.
+ResponseEntity: This is class which is part of Spring Framework which is commonly used to customise the HTTP Response. 
+-------------------------------------------------------------------
+connect to the data base first we need to install some dependencies in our springboot pom.xml file :		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency> 
+    After this we have write few line in our application.properties to connect to the postgres database which is running in our server.
+    spring.application.name=promocode-functionality
+
+# PostgreSQL database connection settings
+spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
+spring.datasource.username=postgres
+spring.datasource.password=host
+
+# Hibernate settings
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+-------------------------------------------------------------------
+After this we have to create following folders :
+-Entities
+-DTOs 
+-Controllers
+-Services 
+-Exceptions
+-Advice
+-------------------------------------------------------------------
+
+    

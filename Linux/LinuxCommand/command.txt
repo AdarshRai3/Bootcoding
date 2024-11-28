@@ -1,0 +1,209 @@
+ <!-- These are general linux commands -->
+  pwd:present working directory
+  date:for date 
+  date + %D : to display only date
+  date + %H:%M :to display only time in Hrs:Mins format
+  whoamI : give user name
+  clear: to clear screen(shortcut: ctrl+l);
+
+ <!-- These are ls commands to see all the files in the directory -->
+ ls : to see all the files and folder inside the folder
+ ls -lt:more description of the files and folder inside the directory
+ ls -lh:to see size of the files
+ *D-rw-rx:D here represents that it is a directory
+
+ <!-- These are cd commands to change directory -->
+ cd :to change directory and move to root directory
+ cd ..:to move to parent directory
+ cd ../..:to move to grand parent directory
+ cd/path/folder: to move in the folder
+ *Relative Path: Path relative to our current location
+ *Absolute Path: Path relative to the root directory
+
+ <!-- These are mkdir commands to create directory -->
+ mkdir :to create a new folder
+ mkdir path/folder :to create a new folder in the path
+
+ <!-- These are touch commands to create file -->
+  touch :to create a new file
+
+ <!-- These are rm commands to delete file -->
+   rm -rf path/folder :to delete the folder
+   rm path/file :to delete the file
+
+ <!--These are commands to move and copy files -->
+   mv path/file :to move the file
+   mv (oldname)(newname): to change the name of the file 
+   cp path/file :to copy the file
+   cp ../ filename : to copy the file from parent directory
+   cp filename filename2 : to copy the file to another file.
+
+ <!-- These are commands to open and search files  -->
+   cat filename : to read the file
+   cat > filename : to write the file
+   less filename : to search the file
+   */read the content of the file from the start
+   *?read the content of the file from the end
+   more filename: to read file line by line
+   *Q to quit
+
+ <!-- These are commands to edit files -->
+  nano filename : to edit the file
+  *crtl+x
+  vi filename :to edit the file at the same time creating it.
+  *use I to insert data in the file and use ESC+shift+:+WQ
+
+ <!-- These are grep command to find things -->
+  grep "string" filename :to search the file
+  egrep "string1|string2" filename :to search the file muliple things in a file
+  
+ <!-- These is command to see and edit lines in the file -->
+  split -l (number of line) filename:this will split the files in multiple subfiles with n number of lines
+  head -(number of line) filename :to see the first n number of lines
+  tail -(number of line) filename :to see the last n number of lines
+  sort filename :to sort the file
+  sort -r filename :to sort the file in reverse order
+  sort filename | uniq :to remove duplicate lines
+
+  <!-- These are wildcards that we can use with the commands -->
+  * : is used with ls to see all the file with same extension and filename 
+  EX: ls *.txt :to see all the txt files
+  {}: is used with touch command to create multiple files
+  EX: touch {file1,file2,file3} :to create multiple files
+  shuf filename : shuffle the content of the file
+  wc -l filename : to count the number of lines in the file
+
+  <!-- these are the command to compare and find difference between two files -->
+  cmp filename1 filename2 :to compare the files
+  *this will give diffence in line 
+  diff filename1 filename2 :to find the difference between the files
+  *this will excatly show the difference in two files
+
+  <!-- these are the command to find the file -->
+  find/path/-name (filename): to find the file in the given directory
+  locate filename : to find the file in the system but before that we have to use updatedb command
+
+  <!-- these are utilities commands -->
+  history: to check the command history
+  --help: to check the help
+  man command : to check the manual of the command
+  exit: to exit
+  which command: to check the executable targeting
+  bc : to use the calculator
+  cal : to see the calendar
+  uptimes : to see how many users are there on your surver and how long they are there
+  script: command will record your activity
+  echo "message"  : to print message on the terminal
+  alias shortcut= "command" : to create alias
+
+ <!-- these are the commands to compress(zip) and decompress the files and folder -->
+   *files
+   gzip -k filename : to keep the file and create a compress copy.
+   gunzip filename : to decompress the file
+
+   *folders
+   tar -cvf filename.tar filename : to compress the folder
+   tar -xvf filename.tar : to decompress the folder
+
+   *to zip and unzip multiple files
+   zip filename.zip filename1 filename2 : to compress the files
+   unzip filename.zip : to decompress the files
+   unzip -l myfile.zip : quick look at the zip file number of lines
+
+   <!-- these are the commands to download files -->
+   wget url : to download the file
+   curl url : to make api calls and download files
+
+   <!-- these are the commands to install the files -->
+    sudo yum install / sudo apt install filename : to install the file
+
+ <!-- these are commands to check program is available or not -->
+     apt search java
+     dnf dist available | grep java
+
+     <!-- these are commands to start,stop and check the status of the service -->
+      systemctl start filename.service
+      systemctl stop  filename.service
+      systemctl status filename.service
+      systemctl list -units --type =service --all
+
+  <!-- these are the commands to see specific line from the csv file -->
+    awk -F , '{print $N}'(filename): we can use particular column of the csv file using this, -F is fields separator it value here is , and the we have performed a printtask.
+    for last line we can use $NF
+    cut -c1-10 filename : to see the first 10 characters
+    sed -n '2p' filename : to see the second line
+
+    sed -n 's/from/to/g' filename : to replace the string from filename
+    EX: sed -n 's/business/finance/g': to replace the string from filename
+
+  <!-- These are the commands to change something the file -->
+     tr [:lower:][:upper:]:this command change all the lower case letter to all the upper case letter in the command 
+     tr -d 'string'filename.txt : to remove the string from the file
+     tr "%""/" filename.txt : to change the % to / in the file
+
+  <!-- These are the commands to increase the size of the file -->
+      tuncate -s 100M file.txt : to increase the size of the file to 100M
+
+ <!-- These are the linux commands to access the remote server -->
+     ssh username@IP-address : to connect to the remote server
+
+ <!-- These are the commands to copy the file to the linux server from your local machine  -->
+      scp filename username@IP-address:/home/username : to copy the file to the remote server
+      EX: scp macfile ad@38.0.101.76:/home/ad
+    
+ <!-- These are the commands to working permission
+      -->
+    ls -ltr: to see the files in the directory with the proper permission
+    chmod -u+rwx filename : to give permission to the user
+    chmod -g+rwx filename : to give permission to the group
+    chmod -o+rwx filename : to give permission to the others
+    chmod -a+rwx filename : to give permission to all
+    chown username filename : to change the owner of the file
+
+ <!-- these are the command to work with hardware in the file -->
+     #free: to see the free memory
+     #df -h: to see the disk usage
+     #top :to check memory utilization and cpu utilization
+
+     <!-- these are the commands to get the system information -->
+      hostname : to see the name of the machine
+      uname -a : to see the system information
+      lsblk : to see the disk information   
+      lscpu : to see the cpu information
+
+  <!-- these are the commands for process management -->
+    ps -ef : to see the process
+    ps -ef | grep filename : to see the process of the filename
+    pgrep java : to see the process of the java with PID
+    kill -9 PID : to kill the process
+    pkill filename : to kill the process of the filename
+    
+  <!-- These are the networking commands -->
+    ifconfig : to see the network information
+    *here in inet:IP Address of the machine 
+    ping IP-address : to ping the IP-address to check whether it is working or not
+    traceroute IP-address : to trace the route of the IP-address
+    netstat -a : to see the active connections
+    netstat -r : to see the routing table
+    netstat -l : to see the listening connections
+    netstat -n : to see the network connections
+    netstat -putan | grep 80: : to see the active connections of the port 80
+    telnet IP:Port - to check port is accesible on the server are not 
+ 
+  <!-- These are the commands for user and user creation -->
+   useradd username : to create the user
+   id ad: to see the id of the user
+   passwd username : to change the password
+   cat/etc/group: to see the group
+   userdel username : to delete the user
+   groupdel groupname : to delete the group
+   usermod -G Testing Nick
+
+  <!-- These are the commands for running a script at a particular time -->
+   at now + 1 minutes : to run the script at a particular time
+   atq : to see the pending jobs
+   atrm 1 : to delete the job
+   cornlab : to see the cron jobs
+   ls>file_in_location : to create a file in the location
+   pwd>>file_in_location : to create a file in the location
+   hostname >> file_in_location : to create a file in the location

@@ -1,0 +1,110 @@
+This structure is often referred to as the Filesystem Hierarchy Standard (FHS).
+
+/ (Root Directory):
+
+The top-level directory of the entire file system hierarchy.
+Every other directory stems from this one.
+
+
+/bin (Binary):
+
+Contains essential command binaries that need to be available in single-user mode.
+Examples: ls, cp, mv, rm, bash
+
+
+/boot:
+
+Contains files needed to boot the system.
+Includes the Linux kernel, initial RAM disk image, and bootloader configuration files.
+
+
+/dev (Devices):
+
+Contains device files which are interfaces for device drivers.
+Examples: hard drives (/dev/sda), terminals (/dev/tty)
+
+
+/etc (Etcetera):
+
+Contains system-wide configuration files.
+Examples: /etc/passwd (user info), /etc/hosts (network hosts)
+
+
+/home:
+
+Contains user home directories.
+Each user typically has a subdirectory here (e.g., /home/username)
+
+
+/lib (Library):
+
+Contains shared libraries needed by system programs.
+Essential for the binaries in /bin and /sbin
+
+
+/media:
+
+Mount point for removable media like CD-ROMs or USB drives.
+
+
+/mnt (Mount):
+
+Temporarily mounted filesystems.
+
+
+/opt (Optional):
+
+Contains add-on application software packages.
+
+
+/proc (Process):
+
+Virtual filesystem providing process and kernel information.
+
+
+/root:
+
+Home directory for the root user.
+
+
+/run:
+
+Contains run-time variable data.
+Cleared on reboot.
+
+
+/sbin (System Binaries):
+
+Contains essential system binaries, usually for system administration.
+Examples: fdisk, fsck, init
+
+
+/srv (Service):
+
+Contains data for services provided by the system.
+
+
+/sys:
+
+Virtual filesystem for modern Linux distributions, exposing kernel features.
+
+
+/tmp (Temporary):
+
+For temporary files. Often cleared on reboot.
+
+
+/usr (Unix System Resources):
+
+Contains the majority of user utilities and applications.
+Has subdirectories like /usr/bin, /usr/lib, /usr/local
+
+
+/var (Variable):
+
+Contains variable data like logs, temporary files, and caches.
+Examples: /var/log (system logs), /var/mail (mail spools)
+
+
+
+This structure may vary slightly between different Linux distributions, but the core concept remains the same. Each directory serves a specific purpose in organizing the system's files and resources.
