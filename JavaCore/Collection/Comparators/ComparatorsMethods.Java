@@ -21,29 +21,42 @@ public class ComparatorsMethods {
     //         return o1.length()-o2.length();
     //     }
     // }
-
-    public class Students{
+    
+    public static class Student{
         
-        String name;
-        float gpa;
-
-
-        public Students(String name, float gpa){
+        private String name;
+        private float gpa;
+    
+    
+    
+        public Student(String name, float gpa){
             this.name = name;
             this.gpa = gpa;
         }
+    
+        public String getName(){
+            return name;
+        }
+        public float getGpa(){
+            return gpa;
+        }
         
     }
+    
+  
     public static void main(String[] args) {
-            
-     List<Students> list = new ArrayList<>();
-     list.add(new Students("Adarsh", 8.5f));
-     list.add(new Students("Raj", 9.5f));
-     list.add(new Students("Rajiv", 7.5f));
-     list.add(new Students("Raja", 6.5f));
-     list.add(new Students("Rama", 5.5f));
+      
+      
+
+
+     List<Student> list = new ArrayList<>();
+     list.add(new Student("Adarsh", 8.5f));
+     list.add(new Student("Raj", 9.5f));
+     list.add(new Student("Rajiv", 7.5f));
+     list.add(new Student("Raja", 6.5f));
+     list.add(new Student("Rama", 5.5f));
      
-     students.sort((a,b)-> {
+     list.sort((a,b)-> {
       if(a.getGpa()-b.getGpa()>0){
         return 1;
       }else if(a.getGpa()-b.getGpa()<0){
@@ -51,11 +64,10 @@ public class ComparatorsMethods {
       }else{
         return a.getName().compareTo(b.getName());
       }
-     } 
-     );
+     });
 
-     for(Students s : list){
-        System.out.println(s.getName() + " " + s.getGpa());
+     for(Student s : list){
+        System.out.println(s.getName() + ":" + s.getGpa());
      }
 
      
