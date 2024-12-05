@@ -11,3 +11,7 @@ Create Table employees(
 Insert into employees values(1,'Mayur','Sharma','RyH2a@example.com',10000,'IT',now());
 Insert into employees(fname,lname,email,salary,hire_date) values ('Abhishek','Sharma','RyH2a@example.com',10000,now());
 
+--Constraints
+-- UNIQUE 
+-- DEFAULT
+-- Not Null 
