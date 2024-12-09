@@ -39,3 +39,24 @@ Select coalesce(pname,'Total'), sum(price) from bill b group by rollup(pname) or
 
 -------------------------------------------------------------------
 
+Create table emp(
+    id int primary key not null,
+    name varchar(100) not null,
+    email varchar(100) unique not null,
+    salary decimal(10,2) not null,
+    dept varchar(100) not null
+)
+
+Create table com(
+    id int primary key not null,
+    name varchar(100) not null,
+    email varchar(100) unique not null,
+    salary decimal(10,2) not null
+    eid int not null 
+    FOREIGN key (eid) references emp(id)
+)
+
+Insert into emp values(1,'Mayur','RyH2a@example.com',10000,'IT');
+Insert into com values(1,'Adarsh','ad@example.com',10000,'IT');
+
+Select * from com c inner join emp e on c.eid = e.id;
