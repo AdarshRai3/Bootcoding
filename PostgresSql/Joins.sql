@@ -48,7 +48,7 @@ Create table emp(
 )
 
 Create table com(
-    id int primary key not null,
+    id serial primary key not null,
     name varchar(100) not null,
     email varchar(100) unique not null,
     salary decimal(10,2) not null
