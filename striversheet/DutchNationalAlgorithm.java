@@ -1,4 +1,5 @@
-class Solution {
+
+public class DutchNationalAlgorithm {
 
     public void swap(int[] nums , int j , int i){
         if(i!=j){

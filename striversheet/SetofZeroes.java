@@ -1,4 +1,4 @@
-class Solution {
+public class SetofZeroes {
     public void setZeroes(int[][] matrix) {
         int m = matrix.length; //row length
         int n = matrix[0].length; //column length

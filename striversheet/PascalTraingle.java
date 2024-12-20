@@ -1,4 +1,4 @@
-class Solution {
+public class PascalTraingle {
     public List<List<Integer>> generate(int numRows) {
         //Initialise 2D list as return type
         List<List<Integer>> ans = new ArrayList<>();
