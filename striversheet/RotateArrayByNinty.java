@@ -39,3 +39,7 @@ public class RotateArrayByNinty {
       System.out.println(matrix);
   }
 }
+// Steps :
+// Transpose a matrix first , reverse the rows.
+// Time Complexity : O(n^2)
+// Space Complexity: O(1);
