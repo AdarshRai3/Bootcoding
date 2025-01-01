@@ -1,4 +1,4 @@
-package JavaCore.Collection.List;
+
 public class LinkedListMethods {
     
     public class Node{

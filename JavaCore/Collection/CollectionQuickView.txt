@@ -1,0 +1,46 @@
+Collection-------------------------------------------
+Collection is an interface which has extends to List,Queue and Set interface.
+Parent Interface is Iterable(anything in which we can apply for each loop comes under iterable)
+Simple for loop iterate using pointer but for each loop interate on the object itself.
+Interable->Collection->(List,Set,Queue)->Classes
+Collections is a class which has methods sort(),reverse()
+List------------------------------------------------
+List interface is used when we want:
+1> Keep the objects in order
+2> We can have duplicates
+-------------------------------------
+*ArrayList 
+->Contingous Memory Location
+->Index Based Addressing
+->Duplicates are allowed
+-------------------------
+Methods of ArrayList
+add(),remove(),set(),get(),size(),addAll(),contains(),toArray(new Integer[0])
+Collections Method in ArrayList
+sort(), reverse()
+remove(index);
+remove(object);
+remove(Integer.valueOf(1))//This one is now treated as value.
+-------------------------
+Intialisation of ArrayList
+ArrayList<Integer> list = new Arraylist<>();
+ArrayList<String> ls = Arrays.asList('Ram','Shayam');//Cannot change size (no add & remove) but can set
+ArrayList<Integer>l = List.of(1,2,3)//Cannot do any operation of this
+Solution:
+ArrayList<Integer>ans = new ArrayList<>(l);
+// Inside the ArrayList() constructor we can pass collection as well as capicity
+---------------------------
+ArrayList 
+Capicity : 10  and Growth factor : 1.5(10 -> 15)
+Time Complexity:
+Post : O(n)
+Get : O(1)
+Put :O(n)
+Search : O(n)
+----------------------------------------------------
+Comparator : It is an interface that comes under java.utils package which helps us to custom ordering
+Implementation of comparators
+class 
+
+
+ 
