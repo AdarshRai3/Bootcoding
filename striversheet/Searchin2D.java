@@ -21,7 +21,7 @@ public class Searchin2D {
          }else if(matrix[row][col]<target) {
             low = mid+1;
          }else{
-            high = mid-1;
+            high= mid-1;
          }
       }
       return false;
