@@ -10,15 +10,17 @@ public class Stack {
         stack.search(1);//to search an element
         stack.pop(); //to remove the topmost element
         stack.peek(); //to see the topmost element
-        stack.search(1);//to search an element
+        stack.search(1);//to search an element and it is one based indexing
+        stack.isEmpty();//to check if the stack is empty
+
         //Since internally it impleaments stack therefore it is thread safe and synchronized means it can be used in multithreaded environment
         //if the environment is multithreaded then it has an overhead due to locking and unlocking of the thread
         //for single threaded environment we prefer to use the linkedlist and impleaments the stack interface using linked list 
 
         LinkedList<Integer> ls = new LinkedList<>();
-        ls.addFirst(1);//stack push() method in linkedlist
+        ls.addLast(1);//stack push() method in linkedlist
         ls.getLast();// stack peek() method in linkedlist
-        ls.removeLast();//stack pop() method in linkedlist
+        ls.removeFirst();//stack pop() method in linkedlist
         ls.size();
 
         ArrayList<Integer> arr = new ArrayList<>();
