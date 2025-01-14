@@ -88,6 +88,9 @@ public class hashMaps{
         map.put("Banana",100);
         map.put("Orange",200);
         map.put("Mango",300);
+
+        map.putIfAbsent("Kiwi",600);
+        map.getOrDefault("Avacado", null);
         System.out.println(map);
     }
 }
