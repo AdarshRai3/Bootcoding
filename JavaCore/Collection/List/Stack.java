@@ -26,6 +26,7 @@ public class Stack {
         ArrayList<Integer> arr = new ArrayList<>();
         arr.get(arr.size()-1);//peek() method of stack
         arr.remove(arr.size()-1);//pop() method of stack
-
+      
+        //Generally we use ArrayDeque when we want to use LIFO principle since it has less overhead and better memory management
     }
 }
