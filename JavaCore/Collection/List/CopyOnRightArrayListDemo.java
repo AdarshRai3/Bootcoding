@@ -17,7 +17,7 @@ public class CopyOnRightArrayListDemo{
 
       for(int i=0;i<ls.size();i++){
         if(item==milk){
-            ls.add("Butter")
+            ls.add("Butter");
         }
       }
       System.out.println(ls);
