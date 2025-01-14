@@ -1,5 +1,6 @@
 import java.util.*;
 public class hashMaps{
+  
     public static void main(String[] args) {
         //Maps
         //Maps Has Key-Value Pair
@@ -74,8 +75,19 @@ public class hashMaps{
         //     System.out.println(i.setValue(i.getValue().toUpperCase()));
         //     System.out.println(i);
         // }
-
+        // Time Complexiy of HashMap
+        //get : O(1) ->O(log n)
+        //put : O(1) ->O(log n)
+        //remove : O(1)->O(log n)
+        //containsKey : O(1)->O(log n)
+        //containsValue : O(n)->O(n)
+        //size : O(1) // Size store in seperate field
+        // same is with isEmpty() method
         HashMap<String,Integer> map = new HashMap<>();
-        
+        map.put("Apple",50);
+        map.put("Banana",100);
+        map.put("Orange",200);
+        map.put("Mango",300);
+        System.out.println(map);
     }
 }
