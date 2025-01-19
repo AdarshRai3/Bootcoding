@@ -2,6 +2,7 @@ import java.util.*;
 public class HashandEqualsMethod {
     
     public static void main(String[] args){
+        
         HashMap<Person,String>hs = new HashMap<>();
         Person p1 = new Person(1,"Ram");
         Person p2 = new Person(2,"Laxman");
