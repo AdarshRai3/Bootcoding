@@ -1,0 +1,5 @@
+Problem : 217 : Duplicate contains
+Solution : Use HashSet and use methods like contains and add if it already contains the element then it HashSet already has duplicate but if doesn't have then add the element.
+if the array contains element it will return true but if doesn't contains element we will return false 
+---------------------------------------------------------------
+Problem :268 : Missing Number
