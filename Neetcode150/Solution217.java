@@ -1,12 +1,19 @@
 public class Solution217 {
     public boolean contansDuplicates(int[] nums){
+        //Create HashSet for the array element
         HashSet<Integer> isSeen = new HashSet<>();
+
+        //Iterate over the array
         for(int i =0;i<n;i++){
+            //check the element already exit in the set
             if(isSeen.contains(nums[i])){
+                //if it does return true 
                 return true;
             }
+            //if not then add the nums element in the array
             isSeen.add(nums[i]);
         }
+           //After the iteration if we dont find the element retrn false 
             return false;
     }
     
