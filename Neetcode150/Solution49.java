@@ -5,28 +5,51 @@ import java.util.List;
 
 public class Solution49 {
      public List<List<String>> groupAnagrams(String[] strs) {
+        //THis is for the edge case when the strs array is empty
         if(strs.length == 0){
             return new ArrayList();
         }
+
+        //We declare a hashmap with HashString as key and list as value
         HashMap<String,List> hm = new HashMap<>();
+
+        //we need a 26 size array to store the count of each character of the string 
         int [] countArray = new int[26];
+
+        //Now we run a for loop for each string in a array 
         for(String s : strs){
+             
+            s.toLowerCase();
+            //For each new string s we need to reset the countArray values as 0.
             Arrays.fill(countArray,0);
+
+            //for each character in the String we need to increase the countArray index by +1 but we are storing count of each character in the countArray
             for(char c : s.toCharArray()){
                 countArray[c-'a']++;
             }
-
+            
+            //sb is used for the StringBuilder, since String is immutable in java
             StringBuilder sb = new StringBuilder();
+
+            //Now for each string we need to generate a hashcode by using the countArray of that string
             for(int i =0;i<26;i++){
+
+                //this is language requirement for the hashcode
                 sb.append("#");
                 sb.append(countArray[i]);
             }
+
+            //Now we convert sb.toString() into String and store it in the key
             String key = sb.toString();
+
+            //Now we check out hashMap if the key exist or not in the hashMap if doesnot we put the key and hashMap and generate the new ArrayList.
             if(!hm.containsKey(key)){
                 hm.put(key, new ArrayList());
             }
+            //Add the key in the ArrayList of the HashMap
                 hm.get(key).add(s);
         }
+          //Add the value of the HashMap in the answer of the ArrayList and return the ArrayList
           return new ArrayList(hm.values());
     }
 }
