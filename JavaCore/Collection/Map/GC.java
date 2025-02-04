@@ -13,7 +13,7 @@ public class Phone{
 
     public String getModel(){
         return model;
-    }
+    
 
     public Integer getPrice(){
         return price;
