@@ -26,3 +26,25 @@ public class Solution238 {
       return result;
    }
 }
+// -------------------------------------------------------------
+// Brute force approach is the take the two nested for loops 
+// for(int i = 0 ; i<nums.length;i++){
+//      int res = 1;
+//    for(int j=i+1 ; j<nums.length;j++){
+//        res = res * nums[j];
+//    }
+//    for(int j=i-1;j>=0;j--){
+//        res = res * nums[j];
+//    } 
+//    result[i] = res;   
+// } 
+
+// Time Complexity : O(N^2)
+// Space Complexity : O(N)
+// -------------------------------------------------------------------------------
+// Better approach
+//In this approach we will you use two arrays to store the products one is pre[] and other is post[]
+//First we will iterate over the array from the left side and get all the pre results in the pre array.
+//then we will iterate over the array from the right side and get all the post results in the post array
+//then we multiply both the arrays values on the same index to get the answer array
+// --------------------------------------------------------------------------------
