@@ -19,6 +19,7 @@ public class Solution424 {
 
             //low we will check the max occrence of any character 
             maxOccurence = Math.max(maxOccurence, ++occurence[s.charAt(high)-'A']);
+            //dont get confuse by this ++occurence[s.charAt(high)-'A'] this is same as taking variable int count = s.char(high)-'A'+1 and then using it in maxOccurence=Math.max(maxOccurence, count);
             //Now if we have high - low + 1 - maxOccurence > replacement operation 
             if(high - low + 1 - maxOccurence > k){
                 
