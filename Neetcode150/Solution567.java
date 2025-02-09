@@ -11,30 +11,36 @@ class Solution567 {
       int [] s1Map = new int[26];
       int [] s2Map = new int[26];
       
-      //Now we need to intialise the map for s1 and first window of s2 and add 
+      //Now we need to intialise the map for s1 and first window of s2 and add for s1Map and s2Map 
       for(int i = 0 ; i<s1.length();i++){
         s1Map[s1.charAt(i)-'a']++;
         s2Map[s2.charAt(i)-'a']++;
       }
 
+      //Now after adding the number of char in both s1Map for string s1 and first sliding window of s2 in s2Map we if start checking in both s1Map and s2Map by traversing the index if at any point we find out that our array dont match we will return false 
       for(int i = 0; i<s2.length()-s1.length(); i++){
+        //checker method which checks both Maps
         if(checker(s1Map,s2Map)){
             return true;
         }
+        // if we find our present window is not equals to s1Map of string s1 then we shift the window by moving window by s2.charAt(i+s1.length)
         s2Map[s2.charAt(i+s1.length)-'a']++;
+        //this will empty the value that was already stored in s2Map
         s2Map[s2.charAt(i)-'a']--;
       }
+          //now after completing the loop we will again check for s1Map and s2Map , that means s2 string contain s1 character
           return checker(s1Map,s2Map);
     }
 
     //This function will help us to travese through the array and check the count
-    public boolean checker( int[] s1Map , int[] s2Map){
+    private boolean checker( int[] s1Map , int[] s2Map){
         for(int i = 0;i<26;i++){
             if(s1Map[i] != s2Map[i]){
                 return false;
             }
-            return true;
+            
         }
+        return true;
     }
 }
 //Optimal Solution
