@@ -40,7 +40,23 @@ Search : O(n)
 ----------------------------------------------------
 Comparator : It is an interface that comes under java.utils package which helps us to custom ordering
 Implementation of comparators
-class 
+public class MyComparator implements Comparator<DataType> {
+    @Override
+    public int compare (int a , int b){
+        return a-b; // ascending order
+        retrun b-a; //descending order
+    }
+}
+list.sort(Comparator.comparingInt(Person::getScore).thenComparing(Person::getName));
+-------------------------------------------------------------
+Lambda expression: ((a,b)-> a-b); //for ascending order , ((a,b)->b-a); //for descending order
+
+list.sort((a,b)->{
+    if(a.getScore()-b.getScore()>0){ return 1} else if(a.getScore()-b.getScore()) else{ return a.getName.compareTo(b.geName())}
+});
+
+list.sort(Comparator.comparingInt(Person::getScore).thenComparing(Person::Comparing));
+------------------------------------------------------------
 
 
  

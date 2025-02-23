@@ -10,7 +10,7 @@ public class ComparatorsMethods {
     //         return o2-o1; // descending order
     //         // return o1-o2; // ascending order
     //         //In general O1 is always taken a larger value and O2 is always taken a smaller value.
-    //         //O1>O2 -> O2-O1 is negative , that means int is -ve hence descending order.
+    //         //O1>O2 -> O1-O2 is negative , that means int is -ve hence descending order.
     //         //O1<O2 -> O1-O2 is positive , that means int is +ve hence ascending order 
     //     }
     // }
