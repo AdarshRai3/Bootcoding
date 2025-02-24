@@ -1,34 +1,16 @@
 public class GC {
     
-}
+    public static void main(String[] args){
+        WeakReference<Phone> phoneWeakRefererence = new WeakReference<>(new Phone("Nokia105", 10000));
+        System.out.println(phoneWeakRefererence.get());
+        System.gc();
+        try{
+             Thread.sleep(10000);
+        }catch(Exception ignored){
 
-public class Phone{
-    String model;
-    Integer price;
-
-    public Phone(String model ,Integer price  ){
-        this.model = model;
-        this.price = price;
+        }
+        System.out.println(phoneWeakReference);
+        
     }
-
-    public String getModel(){
-        return model;
-    
-
-    public Integer getPrice(){
-        return price;
-    }
-
-    public String toString(){
-        return "Model :"+model+",  Price :"+price;
-    }
-
-    public setModel(String model){
-        return this.model = model;
-    }
-
-    public setPrice(Integer price){
-        return this.price = price;
-    }
-    
+    //this is part of garbage collection , generally garbage collector remove the value of weak hashmap
 }

@@ -12,7 +12,7 @@ List interface is used when we want:
 *ArrayList 
 ->Contingous Memory Location
 ->Index Based Addressing
-->Duplicates are allowed
+->Duplicates are allowede
 -------------------------
 Methods of ArrayList
 add(),remove(),set(),get(),size(),addAll(),contains(),toArray(new Integer[0])
