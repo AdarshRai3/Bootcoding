@@ -5,3 +5,6 @@ Introducion to docker
 -Containers are isolated from each other and the host system, but share the OS kernel. This makes them more efficient than traditional virtual machines, which require a full OS for each instance.
 -Containers are portable and can be run on any machine that has Docker installed, regardless of the underlying OS or hardware.
 -Containers are easy to scale and can be started or stopped in seconds, making them ideal for microservices and cloud-native applications.
+-Containers are also easy to manage and can be orchestrated using tools like Kubernetes, Docker Swarm, or Amazon ECS.
+-Containers are not a replacement for virtual machines, but rather a complement to them. They can be used together to create a hybrid environment that takes advantage of the strengths of both technologies.
+--------------------------------------------------------------
