@@ -1,0 +1,10 @@
+1> docker pull imagename : to pull an image from Docker Hub
+2>docker -version : to check the version of Docker installed on your system
+3> docker run imagename : to run a container from an image
+4> docker run -d imagename -p 8080:80 : only run the container in the background and map port 8080 on the host to port 80 in the container
+5> docker run -d imagename -p 8080:80 --name containername : to run the container in the background and map port 8080 on the host to port 80 in the container and give it a name
+6> docker ps : to list all running containers
+7> docker ps -a : to list all containers (running and stopped)
+8> docker stop containername : to stop a running container
+9> docker start containername : to start a stopped container
+10>docker remove -f containername : to forcefully stop and  remove a container 
