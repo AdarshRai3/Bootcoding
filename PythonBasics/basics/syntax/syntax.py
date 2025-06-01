@@ -61,12 +61,12 @@ if __name__ == "__main__":
     
     print("This script is designed to demonstrate Python syntax and type hints.")
     
-    num:list[int] = [1,3,5,7,9]
+    # num:list[int] = [1,3,5,7,9]
     
-    result:list[int] = list_operations(num)
+    # result:list[int] = list_operations(num)
     
-    print(f"Original list: {num}")
-    print(f"Modified list: {result}")
+    # print(f"Original list: {num}")
+    # print(f"Modified list: {result}")
     
     # print(f"a: {a}, type: {type(a)}")
     # print(f"b: {b}, type: {type(b)}")
@@ -79,6 +79,8 @@ if __name__ == "__main__":
     # print(f"x: {x}, type: {type(x)}")
     
     # print(greet("Adarsh"))
+    
+    
     
     
     
