@@ -55,8 +55,37 @@ else:
 #     num = [i + 2 for i in num]
 #     return num
 
+# ----------------------------------------
+# def dict_operations(d:dict[str,int])-> dict[str,int]:
+#     """ This function takes a dictionary with string keys and integer values,
+#     increments each value by 1, and returns the modified dictionary.
+#     """
+#     d["Hindi"] = 95
+#     for subject, score in d.items():
+#        print(f"{subject}:{score}")
+       
+#     return d
+# -----------------------------------------      
+# def greet(name: str = "Guest")-> str:
+    
+#     return f"Hello, {name}!"
+# ------------------------------------------
 
-
+# def sum_of_all(*args: int)->int:
+#     total:int = 0
+#     for i in args:
+#         total +=i
+    
+#     return total
+# -------------------------------------------
+def print_info(*kwargs:Union[str, int, float]) -> None:
+   
+    for key, value in kwargs.items():
+        print(f"{key}: {value}, type: {type(value)}")
+        
+      
+         
+    
 if __name__ == "__main__":
     
     print("This script is designed to demonstrate Python syntax and type hints.")
@@ -80,8 +109,30 @@ if __name__ == "__main__":
     
     # print(greet("Adarsh"))
     
+    # scores : dict[str,int] = {"math":90, "science":85, "english":88}
+    
+    # dict_operations(scores) 
+    
+    # print(f"{scores}")  
+    
+    # s:str = "python is fun"
+    # print(s.upper())
+    # print(s.lower())
+    # print(s.split())
+    # print("fun" in s)
+    
+    #Tuple(immutable sequence of elements)
+    # point:tuple[int,int]=(2,3)
     
     
+    #Set(unique values only)
+    # unique_nums: set[int] = {1, 2, 3, 4, 5}
+    # unique_nums.add(6)
+    # unique_nums.remove(2)
+    # print(f"Unique numbers: {unique_nums}")
     
+    # print(greet())
     
+    # print(greet("Adarsh"))
     
+    # print(f"Sum of all numbers: {sum_of_all(1, 2, 3, 4, 5)}")
