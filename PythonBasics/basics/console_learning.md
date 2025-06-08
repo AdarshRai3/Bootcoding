@@ -225,3 +225,58 @@ NameError: name 'sort' is not defined. Did you mean: 'sorted'?
 >>> num = sorted(num)
 >>> num
 [1, 2, 3, 6]
+Python 3.10.10 (tags/v3.10.10:aad5f6a, Feb  7 2023, 17:20:36) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more informatio>>> chai_types = {"Masala":"Spicy", "Ginger":"Zesty", "Green":"Mild"{'Masala': 'Spicy', 'Ginger': 'Zesty', 'Green': 'Mild'}                                 n': 'Mild'}
+>>> chai_types.get("Masala")
+'Spicy'
+KeyError: 'Masla'
+>>> chai_types["Masala"]
+>>>  for chai in chai_types:
+...   print(chai)
+...
+Masala
+Ginger
+...
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>       
+AttributeError: 'dict' object has no attribuMasala Spicy
+Ginger Zesty
+Green Mild
+...   if "Masala" in chai_types:
+...
+  File "<stdin>", line 1, in <module>       
+NameError: name 'chai_type' is not defined. 
+Did you mean: 'chai_types'?
+>>> for key, values in chai_type.items():   
+...
+  File "<stdin>", line 3
+
+IndentationError: expected an indented block>>> for key, values in chai_types.items():  
+>>> len(chai_types)
+'Spicy'
+AttributeError: 'dict' object has no attribu>>> chai_types.popitem("Ginger")
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>       
+>>> chai_types.popitem()
+"}, "tea":{"green":"mild", "black":"strong"}}
+>>> tea_shop["chai"]["masala"]
+'spciy'
+>>> squared_num={x:x**2 for x in range(1,5) 
+>>>
+{1: 1, 2: 4, 3: 9, 4: 16}
+>>> s
+squared_num   sum(          staticmethod(   
+setattr(      set(          str(
+sorted(       slice(        super(
+>>> squared_num.clear()
+>>> print(squared_num)
+{}
+>>> keys=["Masala", "Ginger", "Lemon"]      
+>>> default_values="Deleicious"
+>>> new_dict= dict.fromkeys(keys,default_value)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>       
+NameError: name 'default_value' is not defined. Did you mean: 'default_values'?
+>>> new_dict= dict.fromkeys(keys,default_values)
+>>> print(new_dict)
+{'Masala': 'Deleicious', 'Ginger': 'Deleicious', 'Lemon': 'Deleicious'}
