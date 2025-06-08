@@ -1,6 +1,7 @@
+#Datatype Object
 In Python we have two types of data types: mutable and immutable.
 
-Mutable data types(that can be changed inplace in the memory):
+##Mutable data types(that can be changed inplace in the memory):
 1> list
 2> set
 3> dict
@@ -8,7 +9,7 @@ Mutable data types(that can be changed inplace in the memory):
 5> array
 6> collections.deque
 
-Immutable data types(that cannot be changed inplace in the memory):
+##Immutable data types(that cannot be changed inplace in the memory):
 1> int
 2> float
 3> bool
@@ -17,3 +18,6 @@ Immutable data types(that cannot be changed inplace in the memory):
 6> frozenset
 7> bytes
 8> NoneType
+
+
+

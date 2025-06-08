@@ -15,3 +15,7 @@ from importlib import reload
 reload(module_name)
 now you can acces the changes in the shell by using module_name.function_name() and module_name.variable_name
 
+7>dir[varaible_name] : Help us to see wha methode we can apply on the variable name
+
+8>KeyError : occurs when we workking in dict datatype and calling a key that does not exist in the map
+
