@@ -191,3 +191,7 @@ I’ll break this into **3 months (12 weeks)** → each week with *Python AI*, *
 ✅ 2 strong projects (AI agent + Go microservice).
 
 
+System Design RoadMap: 
+<img width="760" height="800" alt="image" src="https://github.com/user-attachments/assets/10259924-eb7a-4ace-b277-1e889ab08fc6" />
+
+
