@@ -1,6 +1,5 @@
 Perfect 👌 now we’ll **fuse all three pillars** you need for a FAANG **Machine Learning + DSA + System Design (OS, Networking, DB)** role into Week 1.
 This version will ensure you’re not only solving **medium+hard DSA**, coding ML **from scratch**, but also hitting **system design fundamentals** that FAANG panels love to grill on (OS, Networking, DB internals + real design questions).
-
 ---
 
 # 📅 **Week 1 – DSA + ML + System Design (OS/Networking/DB)**
@@ -13,7 +12,6 @@ This version will ensure you’re not only solving **medium+hard DSA**, coding M
 * **30 min project (Python + Go syntax)**
 * **30 min daily test**
 * **End-of-week 2 hr mock**
-
 ---
 
 ## **Day 1 – Arrays + Hashing + ML Math + OS Basics**
