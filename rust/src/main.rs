@@ -1,6 +1,29 @@
+use std::fmt::Debug;
+
+struct Rect{
+    height:u32,
+    width:u32,
+}
+
+#[derive(Copy,Clone)]
+enum Direction{
+ North,
+ East,
+ West,
+ South,
+}
+
+impl Rect{
+    pub fn area(&self)->u32{
+        return self.height*self.width;
+    }
+    pub fn perimeter(&self)->u32{
+        return 2*(self.height + self.width);
+    }
+}
+
 fn main() {
     println!("Hello, world!");
-
     let is_male:bool = true;
     let is_above_18:bool = true;
 
@@ -61,7 +84,28 @@ fn main() {
     borrowing_rule_2();
     borrowing_rule_3();
 
+    let rect:Rect = Rect {
+        height:32,
+        width:64,
+    };
+
+    println!("The area of the rectangle:{}", rect.area());
+    println!("The perimeter of the rectangle:{}", rect.perimeter());
+
+    let my_direction:Direction = Direction::North;
+    move_direction(my_direction);
+
 } 
+
+
+fn move_direction(direction:Direction){
+   match direction{
+    Direction::East => println!("We are moving East"),
+    Direction::North=> println!("We are moving North"),
+    Direction::South=> println!("We are moving South"),
+    Direction::West=> println!("We are moving West")
+   }
+}
 
 
 pub fn get_first_word(sentence:String)->String{
