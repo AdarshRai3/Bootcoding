@@ -1,11 +1,9 @@
-use std::fmt::Debug;
-
+use std::fs::{self, read};
 struct Rect{
     height:u32,
     width:u32,
 }
 
-#[derive(Copy,Clone)]
 enum Direction{
  North,
  East,
@@ -20,6 +18,12 @@ impl Rect{
     pub fn perimeter(&self)->u32{
         return 2*(self.height + self.width);
     }
+}
+
+enum Shape{
+    Circle(f64),
+    Square(f64),
+    Rectangle(f64,f64),
 }
 
 fn main() {
@@ -95,7 +99,63 @@ fn main() {
     let my_direction:Direction = Direction::North;
     move_direction(my_direction);
 
+
+
+
+    let circle:Shape = Shape::Circle(5.0);
+    let square:Shape= Shape::Square(4.0);
+    let rectangle:Shape=Shape::Rectangle(3.0,5.0);
+
+    let area_of_circle:f64= cal_area(circle);
+    let area_of_rectangle:f64=cal_area(rectangle);
+    let area_of_square:f64=cal_area(square);
+
+    println!("Area of circle : {}",area_of_circle);
+    println!("Area of rectangle:{}",area_of_rectangle);
+    println!("Area of square:{}", area_of_square);
+
+    let result = fs::read_to_string("example.txt");
+
+    match result {
+        Ok(content)=>{
+            println!("File content : {}", content);
+        },
+        Err(err)=>{
+            println!("Error:{}", err);
+        }
+
+    }
+
+    let res = read_from_unsafe_file("example.txt".to_string());
+
+
+    let my_str:String = String::from("Ramana");
+    let val = find_first_a(my_str);
+
+    match val{
+        Some(index)=>println!("The letter a is found at index : {}", index),
+        None=>println!("The letter a is not found in the given string")
+    }
 } 
+
+pub fn read_from_unsafe_file(file_content:String)->Result<String,String>{
+    let rs = fs::read_to_string("example.txt");
+    match rs{
+        Ok(content)=>Ok(content),
+        Err(_)=>Err("Error reading file to string".to_string()),
+    }
+
+}
+
+pub fn find_first_a(s:String)->Option<usize>{
+    for (index ,character) in  s.chars().enumerate(){
+        if character == 'a'{
+            return Some(index);
+        }
+    }
+    return None;
+}
+
 
 
 fn move_direction(direction:Direction){
@@ -107,6 +167,14 @@ fn move_direction(direction:Direction){
    }
 }
 
+fn cal_area(shape: Shape) -> f64 {
+    let ans = match shape {
+        Shape::Circle(radius) => 3.14 * radius * radius,
+        Shape::Square(side) => side * side,
+        Shape::Rectangle(width, height) => width * height,
+    };
+    ans
+}
 
 pub fn get_first_word(sentence:String)->String{
     let mut ans:String = String::from("");
@@ -213,3 +281,4 @@ pub fn borrowing_rule_3(){
     println!("{}",s1);
     println!("If our variable has one mutable reference, then the caraible cannot have anymore mutable and immutable references")
 }
+
