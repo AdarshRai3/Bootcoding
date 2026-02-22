@@ -301,7 +301,7 @@ freq=prefix[r+1][c] - prefix[l][c]
 
 """Performance"""
 #I/O cost heiracrhy
-"System Call >> Python Function Call >> Python Loop >> arthimetic""
+"System Call >> Python Function Call >> Python Loop >> arthimetic"
 """
 Map is faster than list comphrension because : 
 Map run loop in c vs list comphrension run loop in Python Bytecode
