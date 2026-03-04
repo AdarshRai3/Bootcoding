@@ -124,3 +124,6 @@ points.add((x,y))
 # Set uses more memory than list because of hash table.
 # list  → 8 bytes per element
 # set   → ~60+ bytes per element
+
+#Immutable set is frozenset([1,2,3])
+visited.add(frozenset(state))
