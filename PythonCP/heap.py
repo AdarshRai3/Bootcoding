@@ -265,3 +265,52 @@ while pq:
         if nd < dist[nei]:
             dist[nei] = nd
             heapq.heappush(pq, (nd, nei))
+            
+
+#Recoganization Pattern: 
+# -> remove arbitary element from heap 
+# -> update priority
+# -> sliding window remove element
+# -> dynamic removal
+
+#Heapify Performance trick : use : heapq.heapify(arr) -> TC = O(n)
+# for x in arr:
+#     heappush(heap,x) -> TC = O(n log(n))
+
+#Template
+import heapq
+
+class Heap:
+    def __init__(self):
+        self.h = []
+        
+    def push(self,x):
+        heapq.heappush(self.h,x)
+        
+    def pop(self):
+        heapq.heappush(self.h)
+    
+    def top(self):
+        return self.h[0]
+    
+    def size(self):
+        return len(self.h)
+    
+#Heap Problem Recoganisation Pattern 
+
+#minimum element repeatedly
+#top k
+#priority selection
+#merge sorted streams
+#Use Heap 
+
+# Problem  	        Example
+# Top K     |     K largest elements
+# Graph     |	  Dijkstra
+# Greedy    |	  task scheduling
+# Intervals |	  meeting rooms
+# Merge     |	  merge k sorted lists
+# Streaming |     median
+# Priority  |     CPU scheduling
+
+#Use Tuple Ordering Instead of custom comparator
